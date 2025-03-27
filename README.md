@@ -100,3 +100,16 @@ Instead, Rust requires you to use tools like RwLock<> or Mutex<> to safely manag
 
 
 #### Reflection Subscriber-2
+
+1. Did you explore anything beyond the tutorial steps, like src/lib.rs? If not, why? If yes, what did you learn?
+
+Yes, I looked into src/lib.rs to understand how the app's configuration is handled. I learned that the AppConfig struct, along with the dotenvy crate and Figment, is used to load and manage environment variables. This setup makes the application flexible, allowing it to adapt to different environments without hardcoding values.
+
+2. Now that you've tested your notification system with multiple Receiver instances, how does the Observer pattern help with adding more subscribers? What about running more than one Main app instance?
+
+The Observer pattern makes it easy to add more subscribers because each Receiver can register itself independently with the Publisher. This keeps the system loosely coupled and scalable. Running multiple instances of the Main app (Publisher), however, adds complexity. It would require coordination to ensure all notifications are sent properly. Still, as long as Receivers are linked to the right Publisher, the setup remains manageable.
+
+3. Have you written your own tests or improved the documentation in your Postman collection? Was it helpful?
+
+Yes, I wrote custom tests to check the functionality of NotificationRepository and NotificationService. These tests helped catch edge cases and made sure everything worked as expected. I also improved the Postman collection by adding clear descriptions and example requests, which made testing and debugging easier. This was especially helpful during group work where clarity and consistency are important.
+
